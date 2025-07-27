@@ -1,4 +1,3 @@
-<!-- login.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,15 +10,20 @@
 
   <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
     <h2 class="text-2xl font-bold text-center text-blue-900 mb-6">Form One Login</h2>
-    <form action="/login" method="POST">
+    <form action="index.html" method="GET">
       <label class="block mb-2 text-gray-700 font-medium">Student ID</label>
       <input type="text" name="student_id" required class="w-full px-3 py-2 border rounded mb-4"/>
 
-      <label class="block mb-2 text-gray-700 font-medium">Date of Death</label>
+      <label class="block mb-2 text-gray-700 font-medium">Date of Birth</label>
       <input type="date" name="dob" required class="w-full px-3 py-2 border rounded mb-6"/>
 
       <button type="submit" class="w-full bg-blue-800 text-white py-2 rounded hover:bg-blue-900">Login</button>
     </form>
+    
+    <!-- Add this link -->
+    <div class="text-center mt-4">
+      <p class="text-gray-600">Proceed to <a href="index.html" class="text-blue-600 hover:underline">Subject Selection</a></p>
+    </div>
   </div>
 
 </body>
