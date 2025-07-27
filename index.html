@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PRESEC Subject Selection</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 min-h-screen">
+<body class="min-h-screen">
 
   <!-- Header -->
-  <header class="bg-blue-900 text-white p-4">
+  <header class="text-white p-4">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-xl font-bold">PRESEC Subject Selection</h1>
       <span class="text-sm">Form One Portal</span>
@@ -17,48 +18,92 @@
   </header>
 
   <!-- Main Content -->
-  <main class="container mx-auto my-8 p-6 bg-white shadow-md rounded">
-    <h2 class="text-2xl font-semibold mb-4">Select Your Subjects</h2>
+  <main class="container mx-auto my-8 p-6 rounded">
+    <h2 class="text-2xl font-semibold mb-6 text-blue-900">Select Your Subjects</h2>
 
     <!-- Student Info -->
     <form id="subjectForm">
-      <div class="mb-4">
-        <label for="firstname" class="block text-gray-700 font-medium mb-2">First Name</label>
-        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" class="w-full px-3 py-2 border rounded" />
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div>
+          <label for="firstname" class="block text-gray-700 font-medium mb-2">First Name</label>
+          <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" 
+                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
 
-      <div class="mb-4">
-        <label for="surname" class="block text-gray-700 font-medium mb-2">Surname</label>
-        <input type="text" id="surname" name="surname" placeholder="Enter your surname" class="w-full px-3 py-2 border rounded" />
+        <div>
+          <label for="surname" class="block text-gray-700 font-medium mb-2">Surname</label>
+          <input type="text" id="surname" name="surname" placeholder="Enter your surname" 
+                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
       </div>
 
       <!-- Subject Selection -->
-      <div class="mb-6">
-        <label class="block text-gray-700 font-medium mb-2">Select Subject Combination </label>
-        <div class="mb-4">
-            <label class="block text-gray-700 font-medium mb-2">SCIENCE</label>
-            <ul class="list-disc list-inside text-gray-700">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <label><input type="checkbox" name="electives" value="Science with Geography" class="mr-2">Science with Geography</label>
-          <label><input type="checkbox" name="electives" value="Science with French" class="mr-2">Science with French</label>
-          <label><input type="checkbox" name="electives" value="Science with Elective ICT" class="mr-2">Science with Elective ICT</label>
-          <label><input type="checkbox" name="electives" value="Science with Computer Science" class="mr-2">Science with Computer Science</label>
-          <label><input type="checkbox" name="electives" value="Science with Engineering" class="mr-2">Science with Engineering</label>
+      <div class="mb-8">
+        <h3 class="block text-gray-700 font-medium mb-4 text-lg">Select Subject Combination</h3>
+        
+        <!-- Science Section -->
+        <div class="science-section mb-8">
+          <label class="subject-group-title">SCIENCE</label>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <label class="flex items-center space-x-3 p-3 hover:bg-blue-50 rounded-lg transition">
+              <input type="checkbox" name="electives" value="Science with Geography" class="h-5 w-5">
+              <span>Science with Geography</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 hover:bg-blue-50 rounded-lg transition">
+              <input type="checkbox" name="electives" value="Science with French" class="h-5 w-5">
+              <span>Science with French</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 hover:bg-blue-50 rounded-lg transition">
+              <input type="checkbox" name="electives" value="Science with Elective ICT" class="h-5 w-5">
+              <span>Science with Elective ICT</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 hover:bg-blue-50 rounded-lg transition">
+              <input type="checkbox" name="electives" value="Science with Computer Science" class="h-5 w-5">
+              <span>Science with Computer Science</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 hover:bg-blue-50 rounded-lg transition">
+              <input type="checkbox" name="electives" value="Science with Engineering" class="h-5 w-5">
+              <span>Science with Engineering</span>
+            </label>
+          </div>
         </div>
-           <label class="block text-gray-700 font-medium mb-2">GENERAL ARTS</label>
-            <ul class="list-disc list-inside text-gray-700">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <label><input type="checkbox" name="electives" value="ART 1: All core + Government,History,Economics and Geography" class="mr-2">ART 1: All core + [Government] [History] [Economics] [Geography]</label>
-          <label><input type="checkbox" name="electives" value="ART 2: All core + Geography,Additional Mathematics,Economics and computer science" class="mr-2">ART 2: All core + [Add Math] [Com.Science] [Geography] [Economics]</labe>
-        </div>   
 
-      <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded">Submit</button>
+        <!-- Arts Section -->
+        <div class="arts-section mb-8">
+          <label class="subject-group-title">GENERAL ARTS</label>
+          <div class="grid grid-cols-1 gap-4 mt-4">
+            <label class="flex items-start space-x-3 p-3 hover:bg-orange-50 rounded-lg transition">
+              <input type="checkbox" name="electives" value="ART 1: All core + Government,History,Economics and Geography" class="h-5 w-5 mt-1">
+              <span>ART 1: All core + [Government] [History] [Economics] [Geography]</span>
+            </label>
+            <label class="flex items-start space-x-3 p-3 hover:bg-orange-50 rounded-lg transition">
+              <input type="checkbox" name="electives" value="ART 2: All core + Geography,Additional Mathematics,Economics and computer science" class="h-5 w-5 mt-1">
+              <span>ART 2: All core + [Add Math] [Com.Science] [Geography] [Economics]</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Warning Message -->
+      <div id="warning" class="hidden mb-6 p-4 bg-red-100 border-l-4 border-red-500 text-red-700">
+        <p>You can select a maximum of 3 subject combinations.</p>
+      </div>
+
+      <div class="flex justify-center">
+        <button type="submit" 
+                class="px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
+          Submit Selection
+        </button>
+      </div>
     </form>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-blue-900 text-white text-center p-4 mt-8">
-      Presbyterian Boys' Secondary School (PRESEC)
+  <footer class="text-white text-center p-4 mt-12">
+    <div class="container mx-auto">
+      <p>Presbyterian Boys' Secondary School (PRESEC)</p>
+      <p class="text-sm mt-1 opacity-80">© 2023 All Rights Reserved</p>
+    </div>
   </footer>
 
   <!-- JavaScript Validation -->
@@ -71,13 +116,20 @@
       if (checkedBoxes.length > 3) {
         e.preventDefault();
         warning.classList.remove('hidden');
+        // Scroll to warning message
+        warning.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else if (checkedBoxes.length === 0) {
+        e.preventDefault();
+        warning.textContent = "Please select at least one subject combination";
+        warning.classList.remove('hidden');
+        warning.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
         warning.classList.add('hidden');
-        alert("Subjects submitted successfully!");
+        alert("Subjects submitted successfully!\nSelected: " + 
+              Array.from(checkedBoxes).map(cb => cb.value).join(", "));
         // You can send form data to your backend here using fetch() or a form action
       }
     });
   </script>
-
 </body>
 </html>
