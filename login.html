@@ -5,26 +5,179 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PRESEC Login</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <!-- Particles.js library -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <style>
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      z-index: -1;
+    }
+    .login-container {
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    .login-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    .btn-login {
+      transition: all 0.3s ease;
+      background: linear-gradient(to right, #2563eb, #1e40af);
+    }
+    .btn-login:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(30, 64, 175, 0.4);
+    }
+  </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+<body class="min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Particles.js Background -->
+  <div id="particles-js"></div>
 
-  <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-    <h2 class="text-2xl font-bold text-center text-blue-900 mb-6">Form One Login</h2>
-    <form action="index.html" method="GET">
-      <label class="block mb-2 text-gray-700 font-medium">Student ID</label>
-      <input type="text" name="student_id" required class="w-full px-3 py-2 border rounded mb-4"/>
-
-      <label class="block mb-2 text-gray-700 font-medium">Date of Birth</label>
-      <input type="date" name="dob" required class="w-full px-3 py-2 border rounded mb-6"/>
-
-      <button type="submit" class="w-full bg-blue-800 text-white py-2 rounded hover:bg-blue-900">Login</button>
-    </form>
-    
-    <!-- Add this link -->
-    <div class="text-center mt-4">
-      <p class="text-gray-600">Proceed to <a href="index.html" class="text-blue-600 hover:underline">Subject Selection</a></p>
+  <!-- Login Container -->
+  <div class="login-container bg-white p-8 rounded-lg w-full max-w-md mx-4">
+    <div class="text-center mb-6">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Presbyterian_boys_secondary_logo_2.png/512px-Presbyterian_boys_secondary_logo_2.png" alt="PRESEC " class="mx-auto h-20 mb-4 rounded-full">
+      <h2 class="text-2xl font-bold text-blue-900">Form One Login</h2>
+      <p class="text-gray-500 mt-1">Enter your credentials to continue</p>
     </div>
+    
+    <form action="index.html" method="GET">
+      <div class="mb-4">
+        <label class="block text-gray-700 font-medium mb-2 flex items-center">
+          <i class="fas fa-user mr-2 text-blue-600"></i> Student ID
+        </label>
+        <input type="text" name="student_id" required 
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+               placeholder="e.g. PS/2023/001">
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 font-medium mb-2 flex items-center">
+          <i class="fas fa-calendar-alt mr-2 text-blue-600"></i> Date of Birth
+        </label>
+        <input type="date" name="dob" required 
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+      </div>
+
+      <button type="submit" class="btn-login w-full text-white py-3 rounded-lg font-semibold mb-4">
+        Login <i class="fas fa-arrow-right ml-2"></i>
+      </button>
+      
+      <div class="text-center">
+        <p class="text-gray-600">Don't have access? 
+          <a href="#" class="text-blue-600 hover:underline font-medium">Contact Admin</a>
+        </p>
+        <p class="text-gray-500 text-sm mt-2">or proceed directly to 
+          <a href="index.html" class="text-blue-600 hover:underline">Subject Selection</a>
+        </p>
+      </div>
+    </form>
   </div>
 
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+  <!-- Initialize Particles.js -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      particlesJS('particles-js', {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#ffffff"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            }
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": false,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "grab"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 140,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "push": {
+              "particles_nb": 4
+            }
+          }
+        },
+        "retina_detect": true
+      });
+    });
+  </script>
 </body>
 </html>
