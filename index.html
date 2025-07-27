@@ -2,163 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PRESEC Subject Selection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PRESEC Login</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-  <style>
-        
-    .science-section label:hover {
-      background-color: #eff6ff;
-    }
-    .arts-section label:hover {
-      background-color: #fff7ed;
-    }
-    header, footer {
-      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-    }
-  </style>
 </head>
-<body class="min-h-screen bg-gray-50">
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
-  <!-- Header - Fixed duplicate header issue -->
-  <header class="text-white p-4 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <div class="flex items-center">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Presbyterian_boys_secondary_logo_2.png/512px-Presbyterian_boys_secondary_logo_2.png" alt="PRESEC " class="h-10 mr-3">
-        <h1 class="text-xl font-bold">PRESEC Subject Selection</h1>
-      </div>
-      <div class="flex items-center space-x-4">
-        <span class="text-sm">Welcome, Student</span>
-        <a href="login.html" class="text-white hover:text-blue-200 text-sm">Logout</a>
-      </div>
-    </div>
-  </header>
+  <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center text-blue-900 mb-6">Form One Login</h2>
+    <form action="index.html" method="GET">
+      <label class="block mb-2 text-gray-700 font-medium">Student ID</label>
+      <input type="text" name="student_id" required class="w-full px-3 py-2 border rounded mb-4"/>
 
-  <!-- Main Content -->
-  <main class="container mx-auto my-8 p-6 bg-white rounded-lg shadow-md max-w-4xl">
-    <div class="mb-6 flex justify-between items-center">
-      <h2 class="text-2xl font-semibold text-blue-900">Select Your Subjects</h2>
-      <span class="text-sm text-gray-500">Step 2 of 3</span>
-    </div>
+      <label class="block mb-2 text-gray-700 font-medium">Date of Birth</label>
+      <input type="date" name="dob" required class="w-full px-3 py-2 border rounded mb-6"/>
 
-    <!-- Student Info -->
-    <form id="subjectForm">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <div>
-          <label for="studentId" class="block text-gray-700 font-medium mb-2">Student ID</label>
-          <input type="text" id="studentId" name="studentId" placeholder="Enter your student ID" 
-                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
-        </div>
-        <div>
-        
-        </div>
-        <div>
-          <label for="firstname" class="block text-gray-700 font-medium mb-2">First Name</label>
-          <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" 
-                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
-        </div>
-        <div>
-          <label for="surname" class="block text-gray-700 font-medium mb-2">Surname</label>
-          <input type="text" id="surname" name="surname" placeholder="Enter your surname" 
-                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
-        </div>
-      </div>
-
-      <!-- Subject Selection -->
-      <div class="mb-8">
-        <h3 class="block text-gray-700 font-medium mb-4 text-lg">Select Subject Combination</h3>
-        
-        <!-- Science Section -->
-        <div class="science-section mb-8">
-          <label class="subject-group-title">SCIENCE</label>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-            <label class="flex items-center space-x-3 p-3 hover:bg-blue-50 rounded-lg transition cursor-pointer">
-              <input type="checkbox" name="electives" value="Science with Geography" class="h-5 w-5">
-              <span>Science with Geography</span>
-            </label>
-            <label class="flex items-center space-x-3 p-3 hover:bg-blue-50 rounded-lg transition cursor-pointer">
-              <input type="checkbox" name="electives" value="Science with French" class="h-5 w-5">
-              <span>Science with French</span>
-            </label>
-            <label class="flex items-center space-x-3 p-3 hover:bg-blue-50 rounded-lg transition cursor-pointer">
-              <input type="checkbox" name="electives" value="Science with Elective ICT" class="h-5 w-5">
-              <span>Science with Elective ICT</span>
-            </label>
-            <label class="flex items-center space-x-3 p-3 hover:bg-blue-50 rounded-lg transition cursor-pointer">
-              <input type="checkbox" name="electives" value="Science with Computer Science" class="h-5 w-5">
-              <span>Science with Computer Science</span>
-            </label>
-            <label class="flex items-center space-x-3 p-3 hover:bg-blue-50 rounded-lg transition cursor-pointer">
-              <input type="checkbox" name="electives" value="Science with Engineering" class="h-5 w-5">
-              <span>Science with Engineering</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Arts Section -->
-        <div class="arts-section mb-8">
-          <label class="subject-group-title">GENERAL ARTS</label>
-          <div class="grid grid-cols-1 gap-4 mt-4">
-            <label class="flex items-start space-x-3 p-3 hover:bg-orange-50 rounded-lg transition cursor-pointer">
-              <input type="checkbox" name="electives" value="ART 1: All core + Government,History,Economics and Geography" class="h-5 w-5 mt-1">
-              <span>ART 1: All core + [Government] [History] [Economics] [Geography]</span>
-            </label>
-            <label class="flex items-start space-x-3 p-3 hover:bg-orange-50 rounded-lg transition cursor-pointer">
-              <input type="checkbox" name="electives" value="ART 2: All core + Geography,Additional Mathematics,Economics and computer science" class="h-5 w-5 mt-1">
-              <span>ART 2: All core + [Add Math] [Com.Science] [Geography] [Economics]</span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex justify-center">
-        <button type="submit" 
-                class="px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
-          Submit Selection
-        </button>
-      </div>
+      <button type="submit" class="w-full bg-blue-800 text-white py-2 rounded hover:bg-blue-900">Login</button>
     </form>
-  </main>
-
-  <!-- Footer -->
-  <footer class="text-white text-center p-4 mt-12">
-    <div class="container mx-auto">
-      <p>Presbyterian Boys' Secondary School (PRESEC) <span id="current-year"></span></p>
+    
+    <!-- Add this link -->
+    <div class="text-center mt-4">
+      <p class="text-gray-600">Proceed to <a href="index.html" class="text-blue-600 hover:underline">Subject Selection</a></p>
     </div>
-  </footer>
+  </div>
 
-  <!-- JavaScript Validation -->
-  <script>
-    // Set current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    const form = document.getElementById('subjectForm');
-    const warning = document.getElementById('warning');
-    const warningMessage = document.getElementById('warning-message');
-
-    // Add cursor pointer to all labels
-    document.querySelectorAll('label').forEach(label => {
-      label.style.cursor = 'pointer';
-    });
-
-    form.addEventListener('submit', function (e) {
-      const checkedBoxes = document.querySelectorAll('input[name="electives"]:checked');
-      if (checkedBoxes.length > 3) {
-        e.preventDefault();
-        warningMessage.textContent = "You can select a maximum of 3 subject combinations.";
-        warning.classList.remove('hidden');
-        warning.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else if (checkedBoxes.length === 0) {
-        e.preventDefault();
-        warningMessage.textContent = "Please select at least one subject combination";
-        warning.classList.remove('hidden');
-        warning.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        warning.classList.add('hidden');
-        alert("Subjects submitted successfully!\nSelected: " + 
-              Array.from(checkedBoxes).map(cb => cb.value).join(", "));
-      }
-    });
-  </script>
 </body>
 </html>
