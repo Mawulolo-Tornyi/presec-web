@@ -13,5 +13,9 @@ router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/login.html'));
 });
 
+router.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
+
 
 export default router;
